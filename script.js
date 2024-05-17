@@ -60,7 +60,10 @@ function showBooks(){
         <button class="book-button remove" data-index="${i}">Remove</button>
         </div>`
     };
-
+    const readButtons = document.querySelectorAll(".book-button.read");
+    readButtons.forEach(button => button.addEventListener("click",markRead));
+    const removeButton = document.querySelectorAll(".book-button.remove");
+    removeButton.forEach(button => button.addEventListener("click",removeBook));
 }
 
 function addData (){
@@ -68,8 +71,4 @@ function addData (){
     clearFields();
     dialog.close();
     showBooks();
-    const readButtons = document.querySelectorAll(".book-button.read");
-    readButtons.forEach(button => button.addEventListener("click",markRead));
-    const removeButton = document.querySelectorAll(".book-button.remove");
-    removeButton.forEach(button => button.addEventListener("click",removeBook));
 };
